@@ -1,14 +1,14 @@
-// 🔗 Backend API
+//  Backend API
 const API_URL = "http://127.0.0.1:5000/api/news";
 
 let allNews = [];
 
-// 🚀 Load default category
+//  Load default category
 window.onload = () => {
   loadCategory("general");
 };
 
-// 🔥 Fetch default news (not used now, but kept if needed)
+//  Fetch default news (not used now, but kept if needed)
 function fetchNews() {
   showStatus("Loading news...");
 
@@ -26,7 +26,7 @@ function fetchNews() {
     });
 }
 
-// 📰 Display news cards
+//  Display news cards
 function displayNews(newsList) {
     const container = document.getElementById("news-container");
     container.innerHTML = "";
@@ -49,7 +49,7 @@ function displayNews(newsList) {
     });
   }
 
-// 📂 Load category (MAIN FIXED FUNCTION)
+//  Load category (MAIN FIXED FUNCTION)
 function loadCategory(category) {
   showStatus("Loading...");
 
@@ -61,7 +61,7 @@ function loadCategory(category) {
       updateTicker(data);
       hideStatus();
 
-      // 🔥 Highlight active tab
+      //  Highlight active tab
       document.querySelectorAll(".nav-item").forEach(el =>
         el.classList.remove("active")
       );
@@ -76,7 +76,7 @@ function loadCategory(category) {
     });
 }
 
-// 📡 Ticker update
+// Ticker update
 function updateTicker(newsList) {
   const ticker = document.getElementById("tickerTrack");
 
@@ -88,7 +88,7 @@ function updateTicker(newsList) {
   ticker.innerHTML = `<span>${text}</span>`;
 }
 
-// ⚠️ Status messages
+// Status messages
 function showStatus(msg) {
   const status = document.getElementById("statusMessage");
   status.classList.remove("hidden");
@@ -100,12 +100,12 @@ function hideStatus() {
   status.classList.add("hidden");
 }
 
-// 🍔 Mobile menu
+//  Mobile menu
 function toggleMenu() {
   document.getElementById("navLinks").classList.toggle("active");
 }
 
-// ⬇️ Load more (basic placeholder)
+// Load more (basic placeholder)
 function loadMore() {
   displayNews(allNews);
 }
