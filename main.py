@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 app = Flask(__name__)
 CORS(app)
 
-API_KEY = "99a57f5da4d241cab98fbc28b00bf871"
 
 @app.route("/api/news")
 def get_news():
