@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NewsHub — Live Headlines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ░░ NAVBAR ░░ -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">
+      <span class="logo-icon"></span>
+      <span class="logo-text"><strong>NewsHub</strong></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li class="nav-item active" data-category="general"   onclick="loadCategory('general')">General</li>
+      <li class="nav-item"        data-category="technology" onclick="loadCategory('technology')">Technology</li>
+      <li class="nav-item"        data-category="sports"     onclick="loadCategory('sports')">Sports</li>
+      <li class="nav-item"        data-category="business"   onclick="loadCategory('business')">Business</li>
+      <li class="nav-item"        data-category="health"     onclick="loadCategory('health')">Health</li>
+      <li class="nav-item"        data-category="science"    onclick="loadCategory('science')">Science</li>
+    </ul>
+
+
+    <!-- Mobile hamburger -->
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ░░ HERO TICKER ░░ -->
+  <div class="ticker-wrap">
+    <div class="ticker-label">LIVE</div>
+    <div class="ticker-track" id="tickerTrack">
+      <span>Loading latest headlines…</span>
+    </div>
+  </div>
+
+  <!-- ░░ MAIN ░░ -->
+  <main class="main-content">
+
+    <!-- Page heading -->
+    <header class="page-header">
+      <h1 class="page-title" id="pageTitle">Latest Headlines</h1>
+      <p class="page-subtitle" id="pageSubtitle">Curated from top sources worldwide</p>
+    </header>
+
+    <!-- Status / loading / error -->
+    <div id="statusMessage" class="status-message hidden"></div>
+
+    <!-- News grid -->
+    <div id="news-container" class="news-container">
+      <!-- Cards injected by script.js -->
+    </div>
+
+    <!-- Load more -->
+    <div class="load-more-wrap">
+      <button class="load-more-btn" id="loadMoreBtn" onclick="loadMore()" style="display:none">
+        Load More Stories
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer">
+    <p>© 2026 <strong>NewsHub</strong>  <a href="https://www.linkedin.com/in/koushikvakadani/" target="_blank"> Profile</a>— A Nexus production.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
