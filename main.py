@@ -2,13 +2,18 @@ from flask import Flask, jsonify,request
 from flask_cors import CORS
 import requests
 from bs4 import BeautifulSoup
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
+API_KEY = os.getenv("NEWS_API_KEY")
 
 @app.route("/api/news")
 def get_news():
+    if not API_KEY:
+        return jsonify({"error": "API key not found."}), 500
     category = request.args.get("category", "india")
 
     url = f"https://newsapi.org/v2/everything?q={category}&apiKey={API_KEY}"
